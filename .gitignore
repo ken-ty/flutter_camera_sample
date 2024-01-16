@@ -10,6 +10,12 @@
 .svn/
 migrate_working_dir/
 
+# Platforms not supported
+/linux/
+/macos/
+/web/
+/windows/
+
 # IntelliJ related
 *.iml
 *.ipr
