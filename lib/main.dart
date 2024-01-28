@@ -86,12 +86,8 @@ class _Body extends StatelessWidget {
             _customButton(
               title: 'camera デモ画面',
               icon: Icons.camera_alt,
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const CameraExamplePage(),
-                ),
-              ),
+              onPressed: () => CameraExamplePage.asyncRoute()
+                  .then((value) => Navigator.push(context, value)),
             ),
             _customButton(
               title: 'video_player デモ画面',

@@ -1047,25 +1047,43 @@ class CameraApp extends StatelessWidget {
 
 List<CameraDescription> _cameras = <CameraDescription>[];
 
-// Future<void> main() async {
-//   // Fetch the available cameras before initializing the app.
-//   try {
-//     WidgetsFlutterBinding.ensureInitialized();
-//     _cameras = await availableCameras();
-//   } on CameraException catch (e) {
-//     _logError(e.code, e.description);
-//   }
-//   runApp(const CameraApp());
-// }
-
 /// カメラサンプル画面
 ///
 /// https://pub.dev/packages/camera/example を参考に作成
 class CameraExamplePage extends StatelessWidget {
   const CameraExamplePage({super.key});
 
+  /// camera_example.dart > main() の代わり.
+  /// ```
+  /// Future<void> main() async {
+  ///   // Fetch the available cameras before initializing the app.
+  ///   try {
+  ///     WidgetsFlutterBinding.ensureInitialized();
+  ///     _cameras = await availableCameras();
+  ///   } on CameraException catch (e) {
+  ///     _logError(e.code, e.description);
+  ///   }
+  ///   runApp(const CameraApp());
+  /// }
+  /// ```
+  static Future<void> updateCameras() async {
+    try {
+      WidgetsFlutterBinding.ensureInitialized();
+      _cameras = await availableCameras();
+    } on CameraException catch (e) {
+      _logError(e.code, e.description);
+    }
+  }
+
+  static Future<Route<void>> asyncRoute() async {
+    await updateCameras();
+    return MaterialPageRoute<void>(
+      builder: (_) => const CameraExamplePage(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return const CameraExampleHome();
   }
 }
