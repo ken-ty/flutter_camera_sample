@@ -47,14 +47,19 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Flutter Camera Sample'),
         backgroundColor: Theme.of(context).colorScheme.primary,
-        actions: [_aboutButton(context)],
+        actions: const [_AboutButton()],
       ),
       body: const _Body(),
     );
   }
+}
 
-  /// アプリについてのダイアログを表示する
-  Widget _aboutButton(BuildContext context) {
+/// このアプリについてのダイアログを表示するボタン
+class _AboutButton extends StatelessWidget {
+  const _AboutButton();
+
+  @override
+  Widget build(BuildContext context) {
     return IconButton(
       onPressed: () => showAboutDialog(
         context: context,
@@ -83,13 +88,13 @@ class _Body extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
         child: Column(
           children: [
-            _customButton(
+            _CustomButton(
               title: 'camera デモ画面',
               icon: Icons.camera_alt,
               onPressed: () => CameraExamplePage.asyncRoute()
                   .then((value) => Navigator.push(context, value)),
             ),
-            _customButton(
+            _CustomButton(
               title: 'video_player デモ画面',
               icon: Icons.video_call,
               onPressed: () => Navigator.push(
@@ -99,7 +104,7 @@ class _Body extends StatelessWidget {
                 ),
               ),
             ),
-            _customButton(
+            _CustomButton(
               title: 'riverpod を使った実装例',
               icon: Icons.air,
               onPressed: () => Navigator.push(
@@ -114,12 +119,18 @@ class _Body extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _customButton({
-    required String title,
-    IconData? icon,
-    void Function()? onPressed,
-  }) {
+/// アイコン付きボタン
+class _CustomButton extends StatelessWidget {
+  final String title;
+  final IconData? icon;
+  final void Function()? onPressed;
+
+  const _CustomButton({required this.title, this.icon, this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       child: Row(
