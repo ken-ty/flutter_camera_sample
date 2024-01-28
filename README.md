@@ -8,3 +8,7 @@ flutter プロジェクトでカメラを使うサンプルです。
 ## 対応端末
 
 ios simulator ではではカメラは動きません。
+
+## 他
+
+メモ → https://zenn.dev/ken_ty/scraps/49ca12c8d2164c
