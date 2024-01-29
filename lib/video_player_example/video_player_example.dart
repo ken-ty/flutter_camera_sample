@@ -385,9 +385,18 @@ class _PlayerVideoAndPopPageState extends State<_PlayerVideoAndPopPage> {
     _videoPlayerController =
         VideoPlayerController.asset('assets/Butterfly-209.mp4');
     _videoPlayerController.addListener(() {
-      if (startedPlaying && !_videoPlayerController.value.isPlaying) {
+      // example のコードだとエラーになるので修正してます。
+      // ```元のコード
+      // if (startedPlaying && !_videoPlayerController.value.isPlaying) {
+      //   Navigator.pop(context);
+      // }
+      // ```
+      // #修正ここから
+      if (startedPlaying && _videoPlayerController.value.isCompleted) {
         Navigator.pop(context);
+        startedPlaying = false;
       }
+      // #修正ここまで
     });
   }
 
