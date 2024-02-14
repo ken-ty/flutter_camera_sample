@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercamerasample/camera_example/camera_example.dart';
 import 'package:fluttercamerasample/riverpod_example/riverpod_example.dart';
 import 'package:fluttercamerasample/video_player_example/video_player_example.dart';
@@ -110,7 +111,8 @@ class _Body extends StatelessWidget {
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const RiverpodExamplePage(),
+                  builder: (context) =>
+                      const ProviderScope(child: RiverpodExamplePage()),
                 ),
               ),
             ),
