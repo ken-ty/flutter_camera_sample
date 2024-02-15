@@ -1,0 +1,235 @@
+@startuml
+set namespaceSeparator ::
+
+class "fluttercamerasample::riverpod_example::riverpod_example.dart::RiverpodExamplePage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::riverpod_example::riverpod_example.dart::RiverpodExamplePage"
+
+class "fluttercamerasample::riverpod_example::riverpod_example.dart::_Body" {
+  +Widget build()
+}
+
+"flutter_riverpod::src::consumer.dart::ConsumerWidget" <|-- "fluttercamerasample::riverpod_example::riverpod_example.dart::_Body"
+
+class "fluttercamerasample::camera_example::camera_example.dart::CameraExampleHome" {
+  +State<CameraExampleHome> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "fluttercamerasample::camera_example::camera_example.dart::CameraExampleHome"
+
+class "fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState" {
+  +CameraController? controller
+  +XFile? imageFile
+  +XFile? videoFile
+  +VideoPlayerController? videoController
+  +void Function()? videoPlayerListener
+  +bool enableAudio
+  -double _minAvailableExposureOffset
+  -double _maxAvailableExposureOffset
+  -double _currentExposureOffset
+  -AnimationController _flashModeControlRowAnimationController
+  -Animation<double> _flashModeControlRowAnimation
+  -AnimationController _exposureModeControlRowAnimationController
+  -Animation<double> _exposureModeControlRowAnimation
+  -AnimationController _focusModeControlRowAnimationController
+  -Animation<double> _focusModeControlRowAnimation
+  -double _minAvailableZoom
+  -double _maxAvailableZoom
+  -double _currentScale
+  -double _baseScale
+  -int _pointers
+  +void initState()
+  +void dispose()
+  +void didChangeAppLifecycleState()
+  +Widget build()
+  -Widget _cameraPreviewWidget()
+  -void _handleScaleStart()
+  -dynamic _handleScaleUpdate()
+  -Widget _thumbnailWidget()
+  -Widget _modeControlRowWidget()
+  -Widget _flashModeControlRowWidget()
+  -Widget _exposureModeControlRowWidget()
+  -Widget _focusModeControlRowWidget()
+  -Widget _captureControlRowWidget()
+  -Widget _cameraTogglesRowWidget()
+  +String timestamp()
+  +void showInSnackBar()
+  +void onViewFinderTap()
+  +dynamic onNewCameraSelected()
+  -dynamic _initializeCameraController()
+  +void onTakePictureButtonPressed()
+  +void onFlashModeButtonPressed()
+  +void onExposureModeButtonPressed()
+  +void onFocusModeButtonPressed()
+  +void onAudioModeButtonPressed()
+  +dynamic onCaptureOrientationLockButtonPressed()
+  +void onSetFlashModeButtonPressed()
+  +void onSetExposureModeButtonPressed()
+  +void onSetFocusModeButtonPressed()
+  +void onVideoRecordButtonPressed()
+  +void onStopButtonPressed()
+  +dynamic onPausePreviewButtonPressed()
+  +void onPauseButtonPressed()
+  +void onResumeButtonPressed()
+  +dynamic startVideoRecording()
+  +dynamic stopVideoRecording()
+  +dynamic pauseVideoRecording()
+  +dynamic resumeVideoRecording()
+  +dynamic setFlashMode()
+  +dynamic setExposureMode()
+  +dynamic setExposureOffset()
+  +dynamic setFocusMode()
+  -dynamic _startVideoPlayer()
+  +dynamic takePicture()
+  -void _showCameraException()
+}
+
+"fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState" o-- "camera::src::camera_controller.dart::CameraController"
+"fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState" o-- "cross_file::src::types::interface.dart::XFile"
+"fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState" o-- "video_player::video_player.dart::VideoPlayerController"
+"fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState" o-- "dart::ui::void Function()"
+"fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState" o-- "flutter::src::animation::animation_controller.dart::AnimationController"
+"fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState" o-- "flutter::src::animation::animation.dart::Animation<double>"
+"flutter::src::widgets::framework.dart::State" <|-- "fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState"
+"flutter::src::widgets::binding.dart::WidgetsBindingObserver" <|-- "fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState"
+"flutter::src::widgets::ticker_provider.dart::TickerProviderStateMixin" <|-- "fluttercamerasample::camera_example::camera_example.dart::_CameraExampleHomeState"
+
+class "fluttercamerasample::camera_example::camera_example.dart::CameraApp" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::camera_example::camera_example.dart::CameraApp"
+
+class "fluttercamerasample::camera_example::camera_example.dart::CameraExamplePage" {
+  {static} +dynamic updateCameras()
+  {static} +dynamic asyncRoute()
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::camera_example::camera_example.dart::CameraExamplePage"
+
+class "fluttercamerasample::main.dart::MyApp" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::main.dart::MyApp"
+
+class "fluttercamerasample::main.dart::MyHomePage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::main.dart::MyHomePage"
+
+class "fluttercamerasample::main.dart::_AboutButton" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::main.dart::_AboutButton"
+
+class "fluttercamerasample::main.dart::_Body" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::main.dart::_Body"
+
+class "fluttercamerasample::main.dart::_CustomButton" {
+  +String title
+  +IconData? icon
+  +void Function()? onPressed
+  +Widget build()
+}
+
+"fluttercamerasample::main.dart::_CustomButton" o-- "flutter::src::widgets::icon_data.dart::IconData"
+"fluttercamerasample::main.dart::_CustomButton" o-- "null::void Function()"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::main.dart::_CustomButton"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_App" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_App"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_ButterFlyAssetVideoInList" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_ButterFlyAssetVideoInList"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_ExampleCard" {
+  +String title
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_ExampleCard"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_ButterFlyAssetVideo" {
+  +_ButterFlyAssetVideoState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_ButterFlyAssetVideo"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_ButterFlyAssetVideoState" {
+  -VideoPlayerController _controller
+  +void initState()
+  +void dispose()
+  +Widget build()
+}
+
+"fluttercamerasample::video_player_example::video_player_example.dart::_ButterFlyAssetVideoState" o-- "video_player::video_player.dart::VideoPlayerController"
+"flutter::src::widgets::framework.dart::State" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_ButterFlyAssetVideoState"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_BumbleBeeRemoteVideo" {
+  +_BumbleBeeRemoteVideoState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_BumbleBeeRemoteVideo"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_BumbleBeeRemoteVideoState" {
+  -VideoPlayerController _controller
+  -dynamic _loadCaptions()
+  +void initState()
+  +void dispose()
+  +Widget build()
+}
+
+"fluttercamerasample::video_player_example::video_player_example.dart::_BumbleBeeRemoteVideoState" o-- "video_player::video_player.dart::VideoPlayerController"
+"flutter::src::widgets::framework.dart::State" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_BumbleBeeRemoteVideoState"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_ControlsOverlay" {
+  {static} -List<Duration> _exampleCaptionOffsets
+  {static} -List<double> _examplePlaybackRates
+  +VideoPlayerController controller
+  +Widget build()
+}
+
+"fluttercamerasample::video_player_example::video_player_example.dart::_ControlsOverlay" o-- "video_player::video_player.dart::VideoPlayerController"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_ControlsOverlay"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_PlayerVideoAndPopPage" {
+  +_PlayerVideoAndPopPageState createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_PlayerVideoAndPopPage"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::_PlayerVideoAndPopPageState" {
+  -VideoPlayerController _videoPlayerController
+  +bool startedPlaying
+  +void initState()
+  +void dispose()
+  +dynamic started()
+  +Widget build()
+}
+
+"fluttercamerasample::video_player_example::video_player_example.dart::_PlayerVideoAndPopPageState" o-- "video_player::video_player.dart::VideoPlayerController"
+"flutter::src::widgets::framework.dart::State" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::_PlayerVideoAndPopPageState"
+
+class "fluttercamerasample::video_player_example::video_player_example.dart::VideoPlayerExamplePage" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "fluttercamerasample::video_player_example::video_player_example.dart::VideoPlayerExamplePage"
+
+
+@enduml
