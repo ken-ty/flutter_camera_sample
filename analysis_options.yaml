@@ -1,6 +1,5 @@
 include: package:flutter_lints/flutter.yaml
 
-linter:
-  plubins:
-   - custom_lint
-  rules:
+analyzer:
+  plugins:
+    - custom_lint
