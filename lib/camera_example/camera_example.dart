@@ -1032,18 +1032,18 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   }
 }
 
-/// CameraApp is the Main Application.
-class CameraApp extends StatelessWidget {
-  /// Default Constructor
-  const CameraApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: CameraExampleHome(),
-    );
-  }
-}
+// /// CameraApp is the Main Application.
+// class CameraApp extends StatelessWidget {
+//   /// Default Constructor
+//   const CameraApp({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       home: CameraExampleHome(),
+//     );
+//   }
+// }
 
 List<CameraDescription> _cameras = <CameraDescription>[];
 
