@@ -17,6 +17,9 @@ dependencies:
   video_player: ^2.8.2
   flutter_riverpod: ^2.4.10
   freezed_annotation: ^2.4.1
+  collection: ^1.18.0
+  hooks_riverpod: ^2.6.1
+  flutter_hooks:
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,12 @@
 {
   "cSpell.words": [
+    "cameraswitch",
     "CYKAMI",
+    "docregion",
+    "enddocregion",
     "fluttercamerasample",
-    "Riverpod"
+    "Riverpod",
+    "videocam",
+    "vsync"
   ]
 }

@@ -1,0 +1,91 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::Users::apple::ghq::github.com::ken-ty::packages::packages::camera::camera::example::lib::main.dart::CameraExampleHome" {
+  +dynamic createState()
+}
+
+class "file:::::::Users::apple::ghq::github.com::ken-ty::packages::packages::camera::camera::example::lib::main.dart::_CameraExampleHomeState" {
+  +dynamic controller
+  +dynamic imageFile
+  +dynamic videoFile
+  +dynamic videoController
+  +dynamic videoPlayerListener
+  +bool enableAudio
+  -double _minAvailableExposureOffset
+  -double _maxAvailableExposureOffset
+  -double _currentExposureOffset
+  -dynamic _flashModeControlRowAnimationController
+  -dynamic _flashModeControlRowAnimation
+  -dynamic _exposureModeControlRowAnimationController
+  -dynamic _exposureModeControlRowAnimation
+  -dynamic _focusModeControlRowAnimationController
+  -dynamic _focusModeControlRowAnimation
+  -double _minAvailableZoom
+  -double _maxAvailableZoom
+  -double _currentScale
+  -double _baseScale
+  -int _pointers
+  +void initState()
+  +void dispose()
+  +void didChangeAppLifecycleState()
+  +dynamic build()
+  -dynamic _cameraPreviewWidget()
+  -void _handleScaleStart()
+  -dynamic _handleScaleUpdate()
+  -dynamic _thumbnailWidget()
+  -dynamic _modeControlRowWidget()
+  -dynamic _flashModeControlRowWidget()
+  -dynamic _exposureModeControlRowWidget()
+  -dynamic _focusModeControlRowWidget()
+  -dynamic _captureControlRowWidget()
+  -dynamic _cameraTogglesRowWidget()
+  +String timestamp()
+  +void showInSnackBar()
+  +void onViewFinderTap()
+  +dynamic onNewCameraSelected()
+  -dynamic _initializeCameraController()
+  +void onTakePictureButtonPressed()
+  +void onFlashModeButtonPressed()
+  +void onExposureModeButtonPressed()
+  +void onFocusModeButtonPressed()
+  +void onAudioModeButtonPressed()
+  +dynamic onCaptureOrientationLockButtonPressed()
+  +void onSetFlashModeButtonPressed()
+  +void onSetExposureModeButtonPressed()
+  +void onSetFocusModeButtonPressed()
+  +void onVideoRecordButtonPressed()
+  +void onStopButtonPressed()
+  +dynamic onPausePreviewButtonPressed()
+  +void onPauseButtonPressed()
+  +void onResumeButtonPressed()
+  +dynamic startVideoRecording()
+  +dynamic stopVideoRecording()
+  +dynamic pauseVideoRecording()
+  +dynamic resumeVideoRecording()
+  +dynamic setFlashMode()
+  +dynamic setExposureMode()
+  +dynamic setExposureOffset()
+  +dynamic setFocusMode()
+  -dynamic _startVideoPlayer()
+  +dynamic takePicture()
+  -void _showCameraException()
+}
+
+class "file:::::::Users::apple::ghq::github.com::ken-ty::packages::packages::camera::camera::example::lib::main.dart::CameraApp" {
+  +dynamic build()
+}
+
+class "file:::::::Users::apple::ghq::github.com::ken-ty::packages::packages::camera::camera::example::lib::readme_full_example.dart::CameraApp" {
+  +dynamic createState()
+}
+
+class "file:::::::Users::apple::ghq::github.com::ken-ty::packages::packages::camera::camera::example::lib::readme_full_example.dart::_CameraAppState" {
+  +dynamic controller
+  +void initState()
+  +void dispose()
+  +dynamic build()
+}
+
+
+@enduml
