@@ -43,6 +43,7 @@ class RiverpodExamplePage extends HookConsumerWidget {
             : CameraPreview(camera),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: camera != null ? null : Colors.grey,
         onPressed: camera != null
             ? () async {
                 final file = await cameraService.takePicture(camera);
